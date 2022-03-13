@@ -1,7 +1,7 @@
 name: "Rails Specs CI"
 on:
   push:
-    branches: [ main, Run-test-automatically-on-Github ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
