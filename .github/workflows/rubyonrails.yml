@@ -33,7 +33,7 @@ jobs:
       #   run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Run tests
-        run: rspec
+        run: bundler exec rspec spec/*
       - name: Uplaod coverage results
         uses: actions/upload-artifact@main
         if: always()
