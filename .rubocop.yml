@@ -19,7 +19,7 @@ Style/EmptyMethod:
     - 'app/controllers/companies_controller.rb'
 
 Layout/LineLength:
-  Max: 198
+  Max: 120
 
 Layout/EndOfLine:
   EnforcedStyle: lf
