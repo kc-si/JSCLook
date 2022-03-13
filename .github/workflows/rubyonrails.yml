@@ -30,7 +30,7 @@ jobs:
           bundler-cache: true
       - name: Assets precompile
         run: |
-          .bin/rails assets:precompile
+          bin/rails assets:precompile
       # Add or replace database setup steps here
       # - name: Set up database schema
       #   run: bin/rails db:schema:load
