@@ -6,6 +6,21 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
 
+Rails/Present:
+  Exclude:
+    - 'bin/bundle'
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/bundle'
+
+Style/EmptyMethod:
+  Exclude:
+    - 'app/controllers/companies_controller.rb'
+
+Layout/LineLength:
+  Max: 198
+
 Layout/EndOfLine:
   EnforcedStyle: lf
 
