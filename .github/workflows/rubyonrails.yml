@@ -33,4 +33,4 @@ jobs:
       - name: Run tests
         run: bundler exec rspec
       - name: Lint Ruby files
-        run: bin/rubocop --parallel
+        run: rubocop --parallel
