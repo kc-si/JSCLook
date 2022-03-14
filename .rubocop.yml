@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 require: rubocop-rails
 
 AllCops:
@@ -17,6 +19,10 @@ Style/ExpandPathArguments:
 Style/EmptyMethod:
   Exclude:
     - 'app/controllers/companies_controller.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'config/initializers/assets.rb'
 
 Layout/LineLength:
   Max: 120

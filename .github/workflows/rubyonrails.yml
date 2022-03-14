@@ -1,4 +1,4 @@
-name: "Rails Specs CI"
+name: "Rails Tests CI"
 on:
   push:
     branches: [ main ]
