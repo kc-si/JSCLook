@@ -32,6 +32,5 @@ jobs:
           bin/rails assets:precompile
       - name: Run tests
         run: bundler exec rspec
-    lint:
       - name: Lint Ruby files
       run: bin/rubocop --parallel
