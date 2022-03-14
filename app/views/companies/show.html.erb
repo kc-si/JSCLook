@@ -3,6 +3,42 @@
   <%= link_to 'Stock', companies_path, class: "breadcrumb-item small text-decoration-none" %>
   <span class="breadcrumb-item active small"><%= @company.name %></span>
 </nav>
-<h2>Company name: <%= @company.name %></h2><br />
-<h4>Company symbol: <%= @company.isin %></h4><br />
-<h5 class="text-muted">Id in database: <%= @company.id %></h5>
+
+<div class="container">
+  <div class="container">
+    <h4><%= @company.name %></h4>
+    <p class='small text-muted'><%= @company.belong_to %></p>
+  </div>
+  <div class="col m-2">
+    <div class="row">
+      <div class="col">
+        <p>P/BV</p>
+        <p>P/E</p>
+        <p>Capitalization</p>
+        <p>Book value</p>
+        <p>Shares</p>
+        <p>Stock</p><br />
+      </div>
+      <div class="col">
+        <p><%= @company.pbv %></p>
+        <p><%= @company.pe %></p>
+        <p><%= @company.price %></p>
+        <p><%= @company.book_value %></p>
+        <p><%= @company.shares %></p>
+        <p><%= @company.stock %></p><br />
+      </div>
+
+      <dic class="row">
+      <div class="col">
+        <p>Full name</p><br />
+        <p>Sector</p><br />
+        <p>www</p><br />
+      </div>
+      <div class="col">
+        <p><%= @company.full_name %></p><br />
+        <p><%= @company.sector %></p><br />
+        <p><%= @company.www %></p><br />
+      </div>
+    </div>
+  </div>
+</div>

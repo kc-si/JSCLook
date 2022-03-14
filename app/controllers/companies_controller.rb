@@ -5,16 +5,24 @@ require 'gpw/client'
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
+      .select { |company| company.condition == 'company active' }
+      .map { |company| CompanyPresenter.new(company) }
   end
 
   def show
-    @company = Company.find(params[:id])
+    company = Company.find(params[:id])
+    @company = CompanyPresenter.new(company)
   end
 
   def update_companies_list
-    companies = GPW::Client.new.fetch_companies_list
-    companies.each { |company| Company.find_or_create_by!(company) }
+    CompaniesListUpdator.call
     flash[:notice] = 'Companies list successfully updated'
+    redirect_to companies_url
+  end
+
+  def update_companies_details
+    CompaniesDetailsUpdator.call
+    flash[:notice] = 'Companies details successfully updated'
     redirect_to companies_url
   end
 end
