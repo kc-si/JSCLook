@@ -28,13 +28,12 @@ jobs:
         with:
           bundler-cache: true
       - name: Assets precompile
-        run: |
-          bin/rails assets:precompile
+        run: bin/rails assets:precompile
       - name: Run tests
-        run: bundler exec rspec
+        run: bin/bundle exec rspec
       - name: Security audit dependencies
-        run: bundler exec bundler-audit --update
+        run: bin/bundle exec bundler-audit --update
       - name: Security audit application code
-        run: bundler exec brakeman -q -w2
+        run: bin/bundle exec brakeman -q -w2
       - name: Lint Ruby files
-        run: bundler exec rubocop --parallel
+        run: bin/bundle exec rubocop --parallel
