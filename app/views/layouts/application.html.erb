@@ -14,6 +14,16 @@
     <header class='container'>
       <%= render 'layouts/navbar' %>
     </header>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-2" id="aside">
+        <%= render 'layouts/aside' %>
+        </aside>
+
+        <main class="col-10" role="main" id="main">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
