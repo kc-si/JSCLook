@@ -18,6 +18,10 @@ Style/EmptyMethod:
   Exclude:
     - 'app/controllers/companies_controller.rb'
 
+Style/StringLiterals:
+  Exclude:
+    - 'config/initializers/assets.rb'
+
 Layout/LineLength:
   Max: 120
 
