@@ -48,6 +48,10 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 gem 'cssbundling-rails'
 
+# URL connection and json format
+gem 'faraday'
+gem 'json'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
