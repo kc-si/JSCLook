@@ -3,5 +3,28 @@
 require 'rails_helper'
 
 RSpec.describe 'companies/index.html.erb', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'with 2 companies' do
+    let(:companies) do
+      Company.create!([
+        {
+          name: 'MERCATOR',
+          symbol: 'PLMRCTR00015',
+        },
+        {
+          name: 'MOSTALPLC',
+          symbol: 'PLMSTPL00018',
+        },
+      ])
+    end
+
+    it 'displays a list of companies' do
+      render 'companies', companies: companies
+
+      expect(rendered).to match(/MERCATOR/)
+      expect(rendered).to include('MOSTALPLC')
+
+      expect(rendered).to match(/PLMRCTR00015/)
+      expect(rendered).to include('PLMSTPL00018')
+    end
+  end
 end
