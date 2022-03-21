@@ -7,14 +7,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-<<<<<<< HEAD
 
 companies_attrs = [
-=======
-Company.destroy_all
-
-Company.create!([
->>>>>>> Add reading and display companies list from URL
   {
     name: 'ALIOR',
     symbol: 'PLALIOR00045',
@@ -51,10 +45,6 @@ Company.create!([
     name: 'EKOBOX',
     symbol: 'PLEKOBX00018',
   },
-<<<<<<< HEAD
 ]
 
 companies_attrs.each { |company_attrs| Company.find_or_create_by!(company_attrs) }
-=======
-])
->>>>>>> Add reading and display companies list from URL

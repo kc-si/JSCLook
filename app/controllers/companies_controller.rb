@@ -41,7 +41,5 @@ class CompaniesController < ApplicationController
         symbol: company[1],
       }
     end
-
-    def update_db; end
   end
 end

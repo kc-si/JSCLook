@@ -3,11 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Companies', type: :request do
-<<<<<<< HEAD
   describe 'GET /companies' do
-=======
-  describe 'GET /index' do
->>>>>>> Add reading and display companies list from URL
     it 'render the list of companies' do
       Company.create!([
         {
