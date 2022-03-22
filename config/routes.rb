@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get '/companies/update_db', to: 'companies#update_db'
 
-  resources :companies, only: [:index, :show, :new]
+  resources :companies, only: [:index, :show]
 end

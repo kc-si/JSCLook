@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
-  def new
+  def update_db
     conn_gpw = Faraday.new(
       url: 'https://gpw.notoria.pl/widgets/ta/symbols.php',
       params: {
@@ -41,5 +41,6 @@ class CompaniesController < ApplicationController
         symbol: company[1],
       }
     end
+    @companies.each { |company| Company.find_or_create_by!(company) }
   end
 end
