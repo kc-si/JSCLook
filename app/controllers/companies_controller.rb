@@ -10,6 +10,14 @@ class CompaniesController < ApplicationController
   end
 
   def update_db
+    response = read_stock
+    @companies = parse_data(response)
+    @companies.each { |company| Company.find_or_create_by!(company) }
+  end
+
+  private
+
+  def read_stock
     conn_gpw = Faraday.new(
       url: 'https://gpw.notoria.pl/widgets/ta/symbols.php',
       params: {
@@ -31,16 +39,17 @@ class CompaniesController < ApplicationController
       },
     )
 
-    response = conn_gpw.get
+    conn_gpw.get
+  end
 
+  def parse_data(response)
     response_parsed = JSON.parse(response.body.split('(')[1].split(')')[0])
 
-    @companies = response_parsed['symbols'].map do |company|
+    response_parsed['symbols'].map do |company|
       {
         name: company[0],
         symbol: company[1],
       }
     end
-    @companies.each { |company| Company.find_or_create_by!(company) }
   end
 end
