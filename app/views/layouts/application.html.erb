@@ -9,28 +9,31 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%= stylesheet_link_tag "sticky-footer-navbar", "sidebar" %>
+    <%= stylesheet_link_tag "sticky-footer-navbar" %>
 
   </head>
 
   <body>
+
     <header class='container'>
       <%= render 'layouts/navbar' %>
     </header>
-    <div class="container-fluid">
+    <div class="d-lg-none col-12">
+      <%= render 'layouts/aside_sm' %>
+    </div>
       <div class="container-fluid">
-        <div class="row flex-xl-nowrap">
-          <div class="d-none d-xl-block col-xl-2 bd-sidebar">
+        <div class="row">
+          <div class="col col-lg-2 d-none d-lg-inline col-xl-2 bd-sidebar">
             <%= render 'layouts/aside' %>
           </div>
-          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main" id="main">
+          <main class="col col-12 col-lg-8 d-inline py-md-3 pl-md-5 bd-content" role="main" id="main">
             <%= yield %>
           </main>
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
+          <div class="col co-lg-2 d-none d-lg-inline col-xl-2">
           </div>
         </div>
       </div>
-    </div>
+
 
     <footer class="footer container-fluid">
       <%= render 'layouts/footer' %>
