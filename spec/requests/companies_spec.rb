@@ -19,7 +19,7 @@ RSpec.describe 'Companies', type: :request do
       get '/companies'
 
       expect(response).to have_http_status(:success)
-      expect(response.body).to include('Companies')
+      expect(response.body).to include('Symbol')
       expect(response.body).to include('MERCATOR')
       expect(response.body).to include('MOSTALPLC')
     end
