@@ -1,15 +1,15 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#updateCompaniesList">
+<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#fetchCompaniesList">
   UPDATE&nbsp;companies&nbsp;list
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="updateCompaniesList" tabindex="-1" role="dialog"
- aria-labelledby="updateCompaniesList" aria-hidden="true">
+<div class="modal fade" id="fetchCompaniesList" tabindex="-1" role="dialog"
+ aria-labelledby="fetchCompaniesList" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateTitle">Confirm to update comanies database</h5>
+        <h5 class="modal-title" id="fetchTitle">Confirm to update comanies database</h5>
         <button class="btn-close" data-dismiss="modal"></button>
       </div>
       <div class="modal-body">
@@ -18,7 +18,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
-        <%= link_to 'Update', companies_update_db_path, class: "btn btn-outline-primary btn-sm" %>
+        <%= link_to('Update', companies_patch_path, class: "btn btn-outline-primary btn-sm") %>
       </div>
     </div>
   </div>

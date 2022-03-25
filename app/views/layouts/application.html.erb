@@ -14,12 +14,31 @@
   </head>
 
   <body>
+<<<<<<< HEAD
 
     <header class='container'>
       <%= render 'layouts/navbar' %>
     </header>
     <div class="d-lg-none col-12">
       <%= render 'layouts/aside' %>
+=======
+    <div class="container-fluid">
+      <header class='container'>
+        <%= render 'layouts/navbar' %>
+      </header>
+      <div class="row">
+        <aside class="col-2 d-inline pt-5 mt-2" id="aside">
+          <%= render 'layouts/aside' %>
+        </aside>
+
+        <main class="col-10 d-inline pt-5 mt-2" role="main" id="main">
+          <% if flash[:notice] %>
+            <%= render 'layouts/alert' %>
+          <% end %>
+          <%= yield %>
+        </main>
+      </div>
+>>>>>>> Refactor code, add alert
     </div>
       <div class="container-fluid">
         <div class="row">

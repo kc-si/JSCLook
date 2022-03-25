@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'companies#index'
 
-  get '/companies/update_db', to: 'companies#update_db'
+  get '/companies/patch', to: 'companies#patch'
 
   resources :companies, only: [:index, :show]
 end
