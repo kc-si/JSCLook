@@ -4,8 +4,19 @@
 </nav>
 =======
 <p class="th-5 text-muted">Companies</p>
+<<<<<<< HEAD
 <noscript>You don't have javascript enabled. Please follow this link for assistance in turning it on.
  <%= link_to "Turn on javascript", "http://www.enable-javascript.com" %></noscript>
 >>>>>>> Refactor code, add alert
+=======
+<noscript>
+  <div class="alert alert-warning d-flex align-items-center mt-2" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+  <div class="notice">You don't have javascript enabled. Please follow this link for assistance in turning it on.
+    <%= link_to "Turn on javascript", "http://www.enable-javascript.com" %>
+  </div>
+</noscript>
+>>>>>>> Update files for new configuration
 
 <%= render 'companies', companies: @companies %>

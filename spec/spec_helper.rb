@@ -99,30 +99,12 @@ end
 WebMock.disable_net_connect!(allow_localhost: true)
 
 # Configure stubbed connection
-RSpec.configure do |config|
-  config.before(:each) do
-    stub_request(:get, 'https://gpw.notoria.pl/widgets/ta/symbols.php?_=1647857422815&callback=jQuery221045406664420430665_1647857422814')
-      .with(
-           headers: {
-             'Accept' => 'application/json',
-             'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-             'Accept-Language' => 'en-US,en;q=0.5',
-             'Connection' => 'keep-alive',
-             'Content-Type' => 'application/json',
-             'Dnt' => '1',
-             'Referer' => 'https://gpw.notoria.pl/widgets/ta/index.html?symbid=PLPKN0000018&symbname=PKNORLEN&symburl=/widgets/ta/symbols.php&dataurl=/widgets/ta/data.php&periods=1d,1w,1m&periods_intraday=1&ranges=1d,1m,3m,6m,1y,2y,3y,5y,10y',
-             'Sec-Fetch-Dest' => 'empty',
-             'Sec-Fetch-Mode' => 'cors',
-             'Sec-Fetch-Site' => 'same-origin',
-             'Sec-Gpc' => '1',
-             'User-Agent' => 'Faraday v2.2.0',
-             'X-Requested-With' => 'XMLHttpRequest',
-           },
-         )
-      .to_return(
-        status: 200,
-        body: 'jQuery2210({"status":"OK","symbols":[["PKNORLEN","PLPKN0000018"],["PKOBP","PLPKO0000016"]]})"',
-        headers: {},
-      )
-  end
-end
+# Configure stubbed connection for all tests,
+# uncomment lines below end put stubbed connection
+# RSpec.configure do |config|
+#   config.before(:each) do
+
+# put stubbed connection here
+
+#   end
+# end

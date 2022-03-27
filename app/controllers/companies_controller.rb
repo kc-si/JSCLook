@@ -11,9 +11,10 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
-  def patch
-    GPW::Client.new.fetch_companies_list
+  def update_companies_list
+    companies = GPW::Client.new.fetch_companies_list
+    companies.each { |company| Company.find_or_create_by!(company) }
     flash[:notice] = 'Companies list successfully updated'
-    redirect_to '/companies'
+    redirect_to companies_url
   end
 end

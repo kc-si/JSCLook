@@ -8,11 +8,11 @@ RSpec.describe 'Companies', type: :request do
       Company.create!([
         {
           name: 'MERCATOR',
-          symbol: 'PLMRCTR00015',
+          isin: 'PLMRCTR00015',
         },
         {
           name: 'MOSTALPLC',
-          symbol: 'PLMSTPL00018',
+          isin: 'PLMSTPL00018',
         },
       ])
 
@@ -28,7 +28,7 @@ end
 
 RSpec.describe 'GET /companies/:id', type: :request do
   it 'displays selected company' do
-    company = Company.create!(name: 'MOSTALPLC', symbol: 'PLMSTPL00018')
+    company = Company.create!(name: 'MOSTALPLC', isin: 'PLMSTPL00018')
     id = company.id
 
     get "/companies/#{id}"
@@ -39,9 +39,25 @@ RSpec.describe 'GET /companies/:id', type: :request do
   end
 end
 
-RSpec.describe 'GET /companies/patch', type: :request do
+RSpec.describe 'GET /companies/update_companies_list', type: :request do
   it 'fetch and update the list of companies' do
-    get '/companies/patch'
+    stub_request(:get, 'https://gpw.notoria.pl/widgets/ta/symbols.php')
+      .with(
+        headers: {
+          'Accept' => 'application/json',
+          'X-Requested-With' => 'XMLHttpRequest',
+          'Referer' => 'https://gpw.notoria.pl',
+          'DNT' => '1',
+          'Sec-GPC' => '1',
+        },
+      )
+      .to_return(
+        status: 200,
+        body: '({"status":"OK","symbols":[["PKNORLEN","PLPKN0000018"],["PKOBP","PLPKO0000016"]]})"',
+        headers: {},
+      )
+
+    get '/companies/update_companies_list'
 
     expect(response).to have_http_status(:redirect)
     expect(response).to redirect_to('/companies')

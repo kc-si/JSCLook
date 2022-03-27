@@ -11,39 +11,39 @@
 companies_attrs = [
   {
     name: 'ALIOR',
-    symbol: 'PLALIOR00045',
+    isin: 'PLALIOR00045',
   },
   {
     name: 'KOGENERA',
-    symbol: 'PLKGNRC00015',
+    isin: 'PLKGNRC00015',
   },
   {
     name: 'LIVECHAT',
-    symbol: 'PLLVTSF00010',
+    isin: 'PLLVTSF00010',
   },
   {
     name: 'LUBAWA',
-    symbol: 'PLLUBAW00013',
+    isin: 'PLLUBAW00013',
   },
   {
     name: 'MERCATOR',
-    symbol: 'PLMRCTR00015',
+    isin: 'PLMRCTR00015',
   },
   {
     name: 'MOSTALPLC',
-    symbol: 'PLMSTPL00018',
+    isin: 'PLMSTPL00018',
   },
   {
     name: 'APATOR',
-    symbol: 'PLAPATR00018',
+    isin: 'PLAPATR00018',
   },
   {
     name: 'BIOMASS',
-    symbol: 'PLBMSEP00011',
+    isin: 'PLBMSEP00011',
   },
   {
     name: 'EKOBOX',
-    symbol: 'PLEKOBX00018',
+    isin: 'PLEKOBX00018',
   },
 ]
 

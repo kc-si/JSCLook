@@ -16,10 +16,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_133810) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
-    t.string "symbol", null: false
+    t.string "isin", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["symbol"], name: "index_companies_on_symbol", unique: true
+    t.index ["isin"], name: "index_companies_on_isin", unique: true
   end
 
 end
