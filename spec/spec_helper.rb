@@ -98,7 +98,7 @@ end
 # Disable external connection
 WebMock.disable_net_connect!(allow_localhost: true)
 
-# Cnfigure stubbed connection
+# Configure stubbed connection
 RSpec.configure do |config|
   config.before(:each) do
     stub_request(:get, 'https://gpw.notoria.pl/widgets/ta/symbols.php?_=1647857422815&callback=jQuery221045406664420430665_1647857422814')
