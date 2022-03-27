@@ -38,3 +38,13 @@ RSpec.describe 'GET /companies/:id', type: :request do
     expect(response.body).to include('MOSTALPLC')
   end
 end
+
+RSpec.describe 'GET /companies/patch', type: :request do
+  it 'fetch and update the list of companies' do
+    get '/companies/patch'
+
+    expect(response).to have_http_status(:redirect)
+    expect(response).to redirect_to('/companies')
+    expect(flash[:notice]).to eq('Companies list successfully updated')
+  end
+end
