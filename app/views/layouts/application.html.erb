@@ -32,7 +32,7 @@
         </aside>
 
         <main class="col-10 d-inline pt-5 mt-2" role="main" id="main">
-          <% if flash[:notice] %>
+          <% if flash %>
             <%= render 'layouts/alert' %>
           <% end %>
           <%= yield %>
