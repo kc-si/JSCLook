@@ -8,11 +8,11 @@ RSpec.describe 'companies/index.html.erb', type: :view do
       Company.create!([
         {
           name: 'MERCATOR',
-          symbol: 'PLMRCTR00015',
+          isin: 'PLMRCTR00015',
         },
         {
           name: 'MOSTALPLC',
-          symbol: 'PLMSTPL00018',
+          isin: 'PLMSTPL00018',
         },
       ])
     end

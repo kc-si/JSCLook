@@ -48,6 +48,10 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 gem 'cssbundling-rails'
 
+# URL connection and json format
+gem 'faraday'
+gem 'json'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -57,6 +61,7 @@ group :development, :test do
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '>=3.11'
+  gem 'webmock'
 end
 
 group :development do
