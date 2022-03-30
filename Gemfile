@@ -60,6 +60,7 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'guard-rspec', require: false
   gem 'rspec-rails', '>=3.11'
   gem 'webmock'
 end
