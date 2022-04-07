@@ -1,27 +1,51 @@
-# README
+# JSCLook
 
-##  Website under construction
+ This application displays joint stock companies from Poland. There you can see data such as stock indices, shareholder list, etc.
 
+##  Currently the site is under construction, but you can see a beta version on [jsclook.herokuapp.com](https://jsclook.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App is build on Ruby 3.1.0p0
 
-Things you may want to cover:
+## Installation:
 
-* Ruby version
+1. Download repository
 
-* System dependencies
+2. Install Ruby, for more information visit [https://www.ruby-lang.org/](https://www.ruby-lang.org/)
 
-* Configuration
+3. Install gems. Go to main directory of this repository and run from command line:
 
-* Database creation
+    If you do not have installed bundler already, install it by running command:
 
-* Database initialization
+        `gem install bundler`
 
-* How to run the test suite
+    then install gems :
 
-* Services (job queues, cache servers, search engines, etc.)
+        `bundle install`
 
-* Deployment instructions
+4. App needs PostgreSQL database, you can find it at [https://www.postgresql.org/](https://www.postgresql.org/)
 
-* ...
+5. When you have installed PostgreSQL then create user with password for app, in PostgreSQL:
+
+     `username: jsclook`
+     `password: 'jsclookRails'`
+
+     user and password are set in `/config/database.yml`
+
+    Information how to create user in PostgreSQL you can find by read PostgreSQL documentation.
+
+6.  Database creation:
+
+    go to main directory of this repository and run from command line:
+
+        `bin/rails db:setup`
+
+7. Now start the server by running the following command from command line in the app's main directory:
+
+    `bin/rails server`
+
+    app should start server on your local machine,
+
+    you can access site from your browser http://localhost:3000/.
+
+---------------------------------------------------------------------
+Data sources: [GPW](gpw.pl) , [Money.pl](money.pl)
