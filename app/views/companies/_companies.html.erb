@@ -3,19 +3,19 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Joint Stock Company</th>
-        <th scope="col">Symbol</th>
+        <th scope="col">Symbol/ISIN</th>
         <th scope="col">Stock</th>
         <th scope="col">Shares amount</th>
         <th scope="col">Free float</th>
       </tr>
     </thead>
     <tbody>
-      <% companies.each do |company| %>
+      <% companies.each.with_index(1) do |company, index| %>
         <tr>
-          <td class="text-dark" ><%= company.id %></td>
-          <td><%= link_to company.name, company, class: "nav-link text-dark p-0" %></td>
+          <td class="text-dark" ><%= index %></td>
+          <td><%= link_to company.name, company_path(company.id), class: "nav-link text-dark p-0" %></td>
           <td class="text-muted" ><%= company.isin %></td>
-          <td class="text-muted" >###</td>
+          <td class="text-muted" ><%= company.stock %></td>
           <td class="text-muted" >###</td>
           <td class="text-muted" >## %</td>
         </tr>

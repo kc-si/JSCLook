@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_17_133810) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_25_112147) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_133810) do
     t.string "isin", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "full_name"
+    t.string "abbreviation"
+    t.string "stock"
+    t.string "sector"
+    t.string "belong_to"
+    t.float "price"
+    t.float "book_value"
+    t.integer "shares"
+    t.string "www"
+    t.float "pbv"
+    t.float "pe"
+    t.string "condition"
     t.index ["isin"], name: "index_companies_on_isin", unique: true
   end
 

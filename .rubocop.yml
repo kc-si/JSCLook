@@ -18,6 +18,11 @@ Style/EmptyMethod:
   Exclude:
     - 'app/controllers/companies_controller.rb'
 
+Lint/MissingSuper:
+  Exclude:
+    - 'app/lib/companies_details_updator.rb'
+    - 'app/lib/companies_list_updator.rb'
+
 Style/StringLiterals:
   Exclude:
     - 'config/initializers/assets.rb'
