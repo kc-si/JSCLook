@@ -4,7 +4,7 @@
 
 ##  Currently the site is under construction, but you can see a beta version on [jsclook.herokuapp.com](https://jsclook.herokuapp.com/)
 
-App is build on Ruby 3.1.0p0
+App is build on Ruby 3.1.1p18
 
 ## Installation:
 
