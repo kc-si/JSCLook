@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <div class='text-secondary d-inline'><%= current_user.email %></div>
+  <%= link_to 'Logout', destroy_user_session_path, class: "btn btn-outline-secondary" %>
+<% else %>
+  <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-success" %>
+<% end %>
