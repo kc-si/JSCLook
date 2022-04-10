@@ -6,22 +6,34 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
 
-Rails/Present:
+Lint/AssignmentInCondition:
   Exclude:
-    - 'bin/bundle'
-
-Style/ExpandPathArguments:
-  Exclude:
-    - 'bin/bundle'
-
-Style/EmptyMethod:
-  Exclude:
-    - 'app/controllers/companies_controller.rb'
+    - 'db/migrate/20220410111448_add_service_name_to_active_storage_blobs.active_storage.rb'
 
 Lint/MissingSuper:
   Exclude:
     - 'app/lib/companies_details_updator.rb'
     - 'app/lib/companies_list_updator.rb'
+
+Rails/CreateTableWithTimestamps:
+  Exclude:
+    - 'db/migrate/20220410111449_create_active_storage_variant_records.active_storage.rb'
+
+Rails/Present:
+  Exclude:
+    - 'bin/bundle'
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'db/migrate/20220410111448_add_service_name_to_active_storage_blobs.active_storage.rb'
+
+Style/EmptyMethod:
+  Exclude:
+    - 'app/controllers/companies_controller.rb'
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/bundle'
 
 Style/StringLiterals:
   Exclude:
