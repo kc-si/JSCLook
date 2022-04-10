@@ -312,7 +312,7 @@ DEPENDENCIES
   json
   pg (~> 1.1)
   puma (~> 5.6)
-  rails (~> 7.0.2, >= 7.0.2.3)
+  rails (~> 7.0.2, >= 7.0.2.2)
   rspec-rails (>= 3.11)
   rubocop
   rubocop-rails
