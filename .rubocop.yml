@@ -18,6 +18,7 @@ Lint/MissingSuper:
 Rails/CreateTableWithTimestamps:
   Exclude:
     - 'db/migrate/20220410111449_create_active_storage_variant_records.active_storage.rb'
+    - 'db/migrate/20220410082451_create_active_storage_tables.active_storage.rb'
 
 Rails/Present:
   Exclude:
