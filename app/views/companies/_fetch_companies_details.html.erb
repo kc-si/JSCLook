@@ -18,7 +18,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
-        <%= link_to('Update', companies_update_companies_details_path, class: "spinner-button btn btn-outline-primary btn-sm") %>
+        <%= button_to 'Update', companies_update_companies_details_path, method: :post, class: "spinner-button btn btn-outline-primary btn-sm" %>
       </div>
     </div>
   </div>
