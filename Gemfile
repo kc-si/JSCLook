@@ -49,6 +49,9 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 gem 'cssbundling-rails'
 
+# Use Nokogiri
+gem 'nokogiri', '>= 1.13.4'
+
 # URL connection and json format
 gem 'faraday'
 gem 'json'
