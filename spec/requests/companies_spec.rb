@@ -41,7 +41,7 @@ RSpec.describe 'GET /companies/:id', type: :request do
   end
 end
 
-RSpec.describe 'GET /companies/update_companies_list', type: :request do
+RSpec.describe 'POST /companies/update_companies_list', type: :request do
   it 'fetch and update the list of companies' do
     stub_request(:get, 'https://gpw.notoria.pl/widgets/ta/symbols.php')
       .with(
@@ -59,7 +59,7 @@ RSpec.describe 'GET /companies/update_companies_list', type: :request do
         headers: {},
       )
 
-    get '/companies/update_companies_list'
+    post '/companies/update_companies_list'
 
     expect(response).to have_http_status(:redirect)
     expect(response).to redirect_to('/companies')
