@@ -53,8 +53,8 @@ class CompanyPresenter
     @company.book_value or 'n/a'
   end
 
-  def shares
-    @company.shares or 'n/a'
+  def shares_amount
+    @company.shares_amount or 'n/a'
   end
 
   def www

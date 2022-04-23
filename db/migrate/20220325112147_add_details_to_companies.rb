@@ -10,7 +10,7 @@ class AddDetailsToCompanies < ActiveRecord::Migration[7.0]
       t.string :belong_to
       t.float :price
       t.float :book_value
-      t.integer :shares
+      t.integer :shares_amount
       t.string :www
       t.float :pbv
       t.float :pe
