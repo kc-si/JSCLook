@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'gpw/client'
-
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all

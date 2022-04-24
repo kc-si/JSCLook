@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe 'GET /legal_reservations', type: :request do
   it 'renders legal reservations' do
     get legal_reservations_path
