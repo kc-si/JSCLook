@@ -70,7 +70,7 @@ module GPW
           stock: 'GPW',
           pbv: company['cwk'],
           pe: company['cz'],
-          condition: 'company active',
+          condition: 'company_active',
         }
       end
     end
@@ -98,7 +98,7 @@ module GPW
           full_name: company['nazwa_pelna'],
           abbreviation: company['symbol'],
           stock: 'NC',
-          condition: 'company active',
+          condition: 'company_active',
         }
       end
     end

@@ -9,12 +9,12 @@ RSpec.describe 'companies/index.html.erb', type: :view do
         {
           name: 'MERCATOR',
           isin: 'PLMRCTR00015',
-          condition: 'company active',
+          condition: 'company_active',
         },
         {
           name: 'MOSTALPLC',
           isin: 'PLMSTPL00018',
-          condition: 'company active',
+          condition: 'company_active',
         },
       ])
     end

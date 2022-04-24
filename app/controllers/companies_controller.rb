@@ -2,9 +2,12 @@
 
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
-      .select { |company| company.condition == 'company active' }
-      .map { |company| CompanyPresenter.new(company) }
+    if index_params_valid?
+      @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
+      render 'index'
+    else
+      render file: Rails.root.join('public/400.html'), layout: false
+    end
   end
 
   def show
@@ -20,5 +23,11 @@ class CompaniesController < ApplicationController
   def update_companies_details
     CompaniesDetailsUpdator.call
     redirect_to companies_url, notice: t('companies.update_companies_details.success')
+  end
+
+  private
+
+  def index_params_valid?
+    Companies::IndexParamsValidator.new(params.permit(:query, :stock, :condition)).valid?
   end
 end
