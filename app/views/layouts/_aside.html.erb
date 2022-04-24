@@ -1,4 +1,5 @@
-<form class="form-inline d-flex">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-secondary btn-sm" type="submit" role="button">Search</button>
-</form>
+<%= form_tag(companies_path, :method => "get", authenticity_token: false, class: "form-inline d-flex") do %>
+  <%= search_field_tag :query, "", class: "form-control mr-sm-2 d-inline", placeholder: "Search" %>
+  <%= hidden_field_tag(:condition, 'company_active') %>
+  <%= submit_tag "Search", class: "btn btn-outline-secondary btn-sm d-inline" %>
+<% end %>

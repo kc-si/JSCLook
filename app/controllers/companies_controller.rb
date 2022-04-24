@@ -2,9 +2,8 @@
 
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
-      .select { |company| company.condition == 'company active' }
-      .map { |company| CompanyPresenter.new(company) }
+    validate_params
+    @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
   end
 
   def show
@@ -20,5 +19,14 @@ class CompaniesController < ApplicationController
   def update_companies_details
     CompaniesDetailsUpdator.call
     redirect_to companies_url, notice: t('companies.update_companies_details.success')
+  end
+
+  def validate_params
+    validator = Companies::IndexParamsValidator.new(params.permit(:query, :stock, :condition))
+
+    return if validator.valid?
+
+    flash[:error] = 'Unknown search params.'
+    redirect_to companies_url
   end
 end

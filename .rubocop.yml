@@ -10,6 +10,9 @@ Rails/Present:
   Exclude:
     - 'bin/bundle'
 
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'
