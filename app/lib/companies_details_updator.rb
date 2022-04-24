@@ -2,7 +2,7 @@
 
 class CompaniesDetailsUpdator < ApplicationService
   def initialize
-    @gpw_client = Gpw::Client.new
+    @gpw_client = GPW::Client.new
   end
 
   def call
