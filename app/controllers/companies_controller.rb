@@ -28,7 +28,6 @@ class CompaniesController < ApplicationController
 
     return if validator.valid?
 
-    flash[:error] = 'Unknown search params.'
-    redirect_to companies_url
+    render file: Rails.root.join('public/400.html'), layout: false
   end
 end
