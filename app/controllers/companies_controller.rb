@@ -2,7 +2,7 @@
 
 class CompaniesController < ApplicationController
   def index
-    validate_params
+    validate_index_params
     @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
   end
 
@@ -21,7 +21,9 @@ class CompaniesController < ApplicationController
     redirect_to companies_url, notice: t('companies.update_companies_details.success')
   end
 
-  def validate_params
+  private
+
+  def validate_index_params
     validator = Companies::IndexParamsValidator.new(params.permit(:query, :stock, :condition))
 
     return if validator.valid?
