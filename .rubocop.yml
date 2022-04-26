@@ -10,6 +10,10 @@ Rails/Present:
   Exclude:
     - 'bin/bundle'
 
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'app/lib/company_shareholders_updator.rb'
+
 Style/HashSyntax:
   EnforcedShorthandSyntax: never
 
@@ -25,6 +29,7 @@ Lint/MissingSuper:
   Exclude:
     - 'app/lib/companies_details_updator.rb'
     - 'app/lib/companies_list_updator.rb'
+    - 'app/lib/company_shareholders_updator.rb'
 
 Style/StringLiterals:
   Exclude:

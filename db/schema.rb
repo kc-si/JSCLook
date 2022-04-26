@@ -24,12 +24,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_161407) do
     t.string "stock"
     t.string "sector"
     t.string "belong_to"
-    t.float "price"
-    t.float "book_value"
-    t.integer "shares_amount"
+    t.string "price"
+    t.string "book_value"
+    t.string "shares_amount"
     t.string "www"
-    t.float "pbv"
-    t.float "pe"
+    t.string "e_mail"
+    t.string "pbv"
+    t.string "pe"
     t.string "condition"
     t.index ["isin"], name: "index_companies_on_isin", unique: true
   end
@@ -41,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_161407) do
   end
 
   create_table "shares", force: :cascade do |t|
-    t.integer "shares_count"
+    t.string "shares_count"
     t.bigint "shareholder_id", null: false
     t.bigint "company_id", null: false
     t.datetime "created_at", null: false
@@ -56,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_161407) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role", default: 0
+    t.integer "role", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

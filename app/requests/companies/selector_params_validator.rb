@@ -4,7 +4,7 @@ AVAILABLE_STOCKS = %w[GPW NC].freeze
 AVAILABLE_CONDITIONS = %w[company_active].freeze
 
 module Companies
-  class IndexParamsValidator
+  class SelectorParamsValidator
     include ActiveModel::Validations
 
     attr_reader :params

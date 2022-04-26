@@ -7,7 +7,6 @@ class CompaniesListUpdator < ApplicationService
 
   def call
     companies_attrs = @gpw_client.fetch_companies_list
-
     companies_attrs.each { |company_attrs| upsert_company(company_attrs) }
   end
 

@@ -62,11 +62,11 @@ class CompanyPresenter
   end
 
   def pbv
-    @company.pbv ? @company.pbv.ceil(3) : 'n/a'
+    @company.pbv ? @company.pbv[/.*\.\d{3}/] : 'n/a'
   end
 
   def pe
-    @company.pe ? @company.pe.ceil(3) : 'n/a'
+    @company.pe ? @company.pe[/.*\.\d{3}/] : 'n/a'
   end
 
   def condition
