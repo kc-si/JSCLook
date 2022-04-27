@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  companies:
+    update_companies_list:
+      success: 'Companies list successfully updated'
+    update_companies_details:
+      success: 'Companies details successfully updated'
