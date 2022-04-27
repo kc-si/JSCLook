@@ -1,31 +1,23 @@
-<nav class="breadcrumb">
-  <%= link_to 'Home', root_path, class: "breadcrumb-item small text-decoration-none" %>
-  <%= link_to 'Stock', companies_path, class: "breadcrumb-item small text-decoration-none" %>
-  <span class="breadcrumb-item active small"><%= @company.name %></span>
-</nav>
-
-<<<<<<< HEAD
 <div class="container">
   <div class="container">
     <h4><%= @company.name %></h4>
     <p class='small text-muted'><%= @company.belong_to %></p>
   </div>
-  <hr />
   <div class="col m-2">
     <div class="row">
       <div class="col">
         <p>P/BV</p>
         <p>P/E</p>
         <p>Capitalization</p>
-        <p>Book value (PLN)</p>
-        <p>Shares amount</p>
+        <p>Book value</p>
+        <p><%= link_to 'Shares', companies_show_company_shareholders_path(@company.id), class: "nav-link text-primary p-0" %></p>
         <p>Stock</p><br />
       </div>
       <div class="col">
         <p><%= @company.pbv %></p>
         <p><%= @company.pe %></p>
-        <p><%= @company.price %>  million</p>
-        <p><%= @company.book_value %>  million</p>
+        <p><%= @company.price %></p>
+        <p><%= @company.book_value %></p>
         <p><%= @company.shares_amount %></p>
         <p><%= @company.stock %></p><br />
       </div>
@@ -44,6 +36,3 @@
     </div>
   </div>
 </div>
-=======
-<%= render 'company', company: @company %>
->>>>>>> Add shareholders view

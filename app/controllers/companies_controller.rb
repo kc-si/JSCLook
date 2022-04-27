@@ -15,6 +15,10 @@ class CompaniesController < ApplicationController
     @company = CompanyPresenter.new(company)
   end
 
+  def show_company_shareholders
+    @company = Company.find(params[:id])
+  end
+
   def update_companies_list
     CompaniesListUpdator.call
     redirect_to companies_url, notice: t('companies.update_companies_list.success')

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'companies#index'
 
+  get '/companies/:id/shareholders', to: 'companies#show_company_shareholders',
+    as: 'companies_show_company_shareholders'
   post '/companies/update_companies_list', to: 'companies#update_companies_list'
   post '/companies/update_companies_details', to: 'companies#update_companies_details'
   post '/companies/:id/update_shareholders', to: 'companies#update_company_shareholders',
@@ -19,4 +21,5 @@ Rails.application.routes.draw do
   get '/legal_reservations', to: 'static_pages#legal_reservations'
 
   resources :companies, only: [:index, :show]
+  resources :shareholders, only: [:index]
 end

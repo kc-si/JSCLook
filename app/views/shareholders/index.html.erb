@@ -1,0 +1,6 @@
+<nav class="breadcrumb">
+  <%= link_to 'Home', root_path, class: "breadcrumb-item small text-decoration-none" %>
+  <span class="breadcrumb-item active small">Shareholders</span>
+</nav>
+
+<%= render 'shareholders', shareholders: @shareholders %>
