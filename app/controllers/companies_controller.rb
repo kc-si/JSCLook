@@ -14,13 +14,11 @@ class CompaniesController < ApplicationController
 
   def update_companies_list
     CompaniesListUpdator.call
-    flash[:notice] = 'Companies list successfully updated'
-    redirect_to companies_url
+    redirect_to companies_url, notice: t('companies.update_companies_list.success')
   end
 
   def update_companies_details
     CompaniesDetailsUpdator.call
-    flash[:notice] = 'Companies details successfully updated'
-    redirect_to companies_url
+    redirect_to companies_url, notice: t('companies.update_companies_details.success')
   end
 end
