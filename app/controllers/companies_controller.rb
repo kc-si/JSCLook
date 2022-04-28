@@ -2,8 +2,12 @@
 
 class CompaniesController < ApplicationController
   def index
-    validate_index_params
-    @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
+    if index_params_valid?
+      @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
+      render 'index'
+    else
+      render file: Rails.root.join('public/400.html'), layout: false
+    end
   end
 
   def show
@@ -23,11 +27,7 @@ class CompaniesController < ApplicationController
 
   private
 
-  def validate_index_params
-    validator = Companies::IndexParamsValidator.new(params.permit(:query, :stock, :condition))
-
-    return if validator.valid?
-
-    render file: Rails.root.join('public/400.html'), layout: false
+  def index_params_valid?
+    Companies::IndexParamsValidator.new(params.permit(:query, :stock, :condition)).valid?
   end
 end
