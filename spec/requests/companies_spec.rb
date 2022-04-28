@@ -7,12 +7,12 @@ RSpec.describe 'Companies', type: :request do
         {
           name: 'MERCATOR',
           isin: 'PLMRCTR00015',
-          condition: 'company active',
+          condition: 'company_active',
         },
         {
           name: 'MOSTALPLC',
           isin: 'PLMSTPL00018',
-          condition: 'company active',
+          condition: 'company_active',
         },
       ])
 
@@ -28,7 +28,7 @@ end
 
 RSpec.describe 'GET /companies/:id', type: :request do
   it 'displays selected company' do
-    company = Company.create!(name: 'MOSTALPLC', isin: 'PLMSTPL00018', condition: 'company active')
+    company = Company.create!(name: 'MOSTALPLC', isin: 'PLMSTPL00018', condition: 'company_active')
     id = company.id
 
     get "/companies/#{id}"
@@ -62,5 +62,29 @@ RSpec.describe 'POST /companies/update_companies_list', type: :request do
     expect(response).to have_http_status(:redirect)
     expect(response).to redirect_to('/companies')
     expect(flash[:notice]).to eq('Companies list successfully updated')
+  end
+end
+
+RSpec.describe 'GET /companies/?query=MST&commit=Search', type: :request do
+  it 'displays companies where param query is include in name or isin' do
+    Company.create!([
+      {
+        name: 'MERCATOR',
+        isin: 'PLMRCTR00015',
+        condition: 'company_active',
+      },
+      {
+        name: 'MOSTALPLC',
+        isin: 'PLMSTPL00018',
+        condition: 'company_active',
+      },
+    ])
+
+    get '/companies/?query=MST&commit=Search'
+
+    expect(response).to have_http_status(:success)
+    expect(response.body).to include('Search result')
+    expect(response.body).to include('MOSTALPLC')
+    expect(response.body).to_not include('MERCATOR')
   end
 end
