@@ -13,6 +13,7 @@ Rails/Present:
 Rails/SkipsModelValidations:
   Exclude:
     - 'app/lib/company_shareholders_updator.rb'
+    - 'app/lib/company_profile_updator.rb'
 
 Style/HashSyntax:
   EnforcedShorthandSyntax: never
@@ -30,10 +31,15 @@ Lint/MissingSuper:
     - 'app/lib/companies_details_updator.rb'
     - 'app/lib/companies_list_updator.rb'
     - 'app/lib/company_shareholders_updator.rb'
+    - 'app/lib/company_profile_updator.rb'
 
 Style/StringLiterals:
   Exclude:
     - 'config/initializers/assets.rb'
+
+Style/SymbolProc:
+  Exclude:
+    - 'app/lib/gpw/client.rb'
 
 Layout/LineLength:
   Max: 120

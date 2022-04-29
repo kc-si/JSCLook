@@ -39,3 +39,7 @@ en:
       success: 'Company shareholders successfully updated'
     update_selected_companies_shareholders:
       success: 'Selected companies shareholders successfully updated'
+    update_company_profile:
+      success: 'Company profile successfully updated'
+    update_selected_companies_profiles:
+      success: 'Selected companies profiles successfully updated'

@@ -29,6 +29,18 @@ module GPW
       parse_shareholders_list(response)
     end
 
+    def fetch_gpw_company_profile(stock, isin)
+      response_info = fetch_gpw_company_tab(stock, isin, 'infoTab')
+      profile_info = parse_profile_info(response_info.body)
+      sleep(1.second)
+      response_quotations = fetch_gpw_company_tab(stock, isin, 'quotationsTab')
+      profile_quotations = parse_profile_quotations(response_quotations.body)
+      sleep(1.second)
+      response_indicators = fetch_gpw_company_tab(stock, isin, 'indicatorsTab')
+      profile_indicators = parse_profile_indicators(response_indicators.body)
+      profile_info.merge(profile_quotations, profile_indicators)
+    end
+
     private
 
     def fetch_stock_list
@@ -74,7 +86,7 @@ module GPW
         {
           isin: company['stock_url_rel'][%r{/\w*\.}].delete_prefix!('/').delete_suffix!('.'),
           stock: 'GPW',
-          # price: company['kapitalizacja'].to_s,
+          price: company['kapitalizacja'].to_s,
           pbv: company['cwk'].to_s,
           pe: company['cz'].to_s,
           condition: 'company_active',
@@ -147,6 +159,40 @@ module GPW
           voices_percentage: tds[4].text,
         }
       end
+    end
+
+    def parse_profile_info(response_body)
+      tds = parse_gpw_response_table(response_body)
+      {
+        full_name: tds[5].text,
+        abbreviation: tds[4].text,
+        shares_amount: tds[1].text,
+        price: tds[2].text,
+        www: tds[11].text.strip,
+        e_mail: tds[12].text.strip,
+      }
+    end
+
+    def parse_profile_quotations(response_body)
+      tds = parse_gpw_response_table(response_body)
+      belong_to = tds[0].text.split(',').map { |str| str.strip }
+      {
+        belong_to: belong_to.join(', '),
+      }
+    end
+
+    def parse_profile_indicators(response_body)
+      tds = parse_gpw_response_table(response_body)
+      {
+        sector: tds[2].text,
+        book_value: tds[5].text,
+      }
+    end
+
+    def parse_gpw_response_table(response_body)
+      doc = Nokogiri::HTML.parse(response_body)
+      table = doc.search('table')[0]
+      table.search('tr').map { |tr| tr.search('td') }
     end
   end
 end

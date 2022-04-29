@@ -1,0 +1,30 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#fetchCompaniesProfiles">
+  UPDATE&nbsp;companies&nbsp;profiles
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="fetchCompaniesProfiles" tabindex="-1" role="dialog"
+ aria-labelledby="fetchCompaniesProfiles" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fetchTitle">Select and confirm to update selected companies profiles</h5>
+        <button class="btn-close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        By confirm you will download actual selected companies profiles
+        and update companies database.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
+        <%= form_with url: companies_update_selected_companies_profiles_path, method: :post, class: "form-inline d-flex" do |f| %>
+          <div class="container-fluid">
+            <%= f.select :stock, ["GPW"], selected: "GPW", class: "form-select form-select-sm" %>
+          </div>
+          <%= f.submit "Update", class: "btn btn-outline-primary btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
