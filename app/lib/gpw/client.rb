@@ -43,7 +43,7 @@ module GPW
     end
 
     def parse_response(response)
-      body_parsed = JSON.parse(response.body.split('(')[1].split(')')[0])
+      body_parsed = JSON.parse(response.body[/[^(].*[^)]/])
 
       body_parsed.fetch('symbols').map do |company|
         {
