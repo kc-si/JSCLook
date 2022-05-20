@@ -43,14 +43,14 @@ RSpec.describe 'POST /companies/update_companies_list', type: :request do
   it 'fetch and update the list of companies' do
     stub_request(:get, 'https://gpw.notoria.pl/widgets/ta/symbols.php')
       .with(
-           headers: {
-             'Accept' => 'application/json',
-             'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-             'Dnt' => '1',
-             'Referer' => 'https://gpw.notoria.pl',
-             'User-Agent' => 'Faraday v2.2.0',
-           },
-         )
+        headers: {
+          'Accept' => 'application/json',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Dnt' => '1',
+          'Referer' => 'https://gpw.notoria.pl',
+          'User-Agent' => 'Faraday v2.3.0',
+        },
+      )
       .to_return(
         status: 200,
         body: '({"status":"OK","symbols":[["PKNORLEN","PLPKN0000018"],["PKOBP","PLPKO0000016"]]})',
