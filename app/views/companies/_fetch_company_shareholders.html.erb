@@ -18,7 +18,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
-        <%= button_to 'Update', companies_update_selected_companies_shareholders_path(id: @company.id), method: :post, class: "btn btn-outline-primary btn-sm" %>
+        <%= button_to 'Update', companies_update_company_shareholders_path(@company.id), method: :post, class: "btn btn-outline-primary btn-sm" %>
       </div>
     </div>
   </div>

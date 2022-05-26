@@ -2,9 +2,9 @@
 
 class CompaniesShareholdersUpdator < CompanyShareholdersUpdator
   def call(companies)
-    time_shift = DateTime.now - 40
+    time_shift = DateTime.now.utc - 40
     companies.each.with_index(1) do |company, index|
-      if company.shares[0].nil? || company.shares[0].updated_at < time_shift
+      if company.shares.empty? || company.shares[0].updated_at < time_shift
         CompanyShareholdersUpdator.call(company.id)
         slow_iteration(index)
       end

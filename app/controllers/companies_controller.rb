@@ -26,15 +26,18 @@ class CompaniesController < ApplicationController
   end
 
   def update_selected_companies_shareholders
-    if params[:id]
-      update_company_shareholders(params[:id])
-    elsif selector_params_valid?
+    if selector_params_valid?
       companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
       CompaniesShareholdersUpdator.call(companies)
       redirect_to companies_url(params[:stock]), notice: t('companies.update_selected_companies_shareholders.success')
     else
       render_bad_request_error
     end
+  end
+
+  def update_company_shareholders
+    CompanyShareholdersUpdator.call(params.require(:id))
+    redirect_to company_url(params.require(:id)), notice: t('companies.update_company_shareholders.success')
   end
 
   private
@@ -45,10 +48,5 @@ class CompaniesController < ApplicationController
 
   def render_bad_request_error
     render file: Rails.root.join('public/400.html'), layout: false
-  end
-
-  def update_company_shareholders(id)
-    CompanyShareholdersUpdator.call(id)
-    redirect_to company_url(id), notice: t('companies.update_company_shareholders.success')
   end
 end

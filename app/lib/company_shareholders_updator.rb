@@ -6,7 +6,7 @@ class CompanyShareholdersUpdator < ApplicationService
   end
 
   def call(id)
-    company = Company.find_by(id: id)
+    company = Company.find(id)
     company_shareholders = @gpw_client.fetch_company_shareholders(company.stock, company.isin)
     upsert_company_shareholders(company_shareholders, company)
   end
