@@ -1,0 +1,25 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#fetchCompanyShareholders">
+  UPDATE&nbsp;company&nbsp;shareholders
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="fetchCompanyShareholders" tabindex="-1" role="dialog"
+ aria-labelledby="fetchCompanyShareholders" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fetchTitle">Confirm to update company shareholders</h5>
+        <button class="btn-close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        By confirm you will download actual company shareholders
+        and update company shareholders database.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
+        <%= button_to 'Update', companies_update_company_shareholders_path(@company.id), method: :post, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

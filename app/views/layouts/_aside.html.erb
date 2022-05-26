@@ -1,5 +1,5 @@
-<%= form_tag(companies_path, :method => "get", authenticity_token: false, class: "form-inline d-flex") do %>
-  <%= search_field_tag :query, "", class: "form-control mr-sm-2 d-inline", placeholder: "Search" %>
-  <%= hidden_field_tag(:condition, 'company_active') %>
-  <%= submit_tag "Search", class: "btn btn-outline-secondary btn-sm d-inline" %>
+<%= form_with url: companies_path, method: :get, class: "form-inline d-flex" do |f| %>
+  <%= f.search_field :query, class: "form-control mr-sm-2 d-inline", placeholder: "Search" %>
+  <%= f.hidden_field condition: "company_active" %>
+  <%= f.submit "Search", class: "btn btn-outline-secondary btn-sm d-inline" %>
 <% end %>

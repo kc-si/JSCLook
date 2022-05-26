@@ -3,7 +3,7 @@
 class CreateShares < ActiveRecord::Migration[7.0]
   def change
     create_table :shares do |t|
-      t.integer :shares_count
+      t.string :shares_count
       t.references :shareholder, null: false, foreign_key: true
       t.references :company, null: false, foreign_key: true
 

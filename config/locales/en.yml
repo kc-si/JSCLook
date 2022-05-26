@@ -35,3 +35,7 @@ en:
       success: 'Companies list successfully updated'
     update_companies_details:
       success: 'Companies details successfully updated'
+    update_company_shareholders:
+      success: 'Company shareholders successfully updated'
+    update_selected_companies_shareholders:
+      success: 'Selected companies shareholders successfully updated'

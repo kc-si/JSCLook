@@ -4,3 +4,11 @@
 <div class="mt-2">
   <%= render 'companies/fetch_companies_details' %>
 </div>
+<div class="mt-2">
+  <%= render 'companies/fetch_companies_shareholders' %>
+</div>
+<% if @company %>
+  <div class="mt-2">
+    <%= render '/companies/fetch_company_shareholders' %>
+  </div>
+<% end %>
