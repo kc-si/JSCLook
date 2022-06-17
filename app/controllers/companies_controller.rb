@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
       @companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
       render 'index'
     else
-      render file: Rails.root.join('public/400.html'), layout: false
+      render file: Rails.public_path.join('400.html'), layout: false
     end
   end
 
@@ -47,6 +47,6 @@ class CompaniesController < ApplicationController
   end
 
   def render_bad_request_error
-    render file: Rails.root.join('public/400.html'), layout: false
+    render file: Rails.public_path.join('400.html'), layout: false
   end
 end
