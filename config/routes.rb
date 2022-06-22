@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     as: 'companies_update_company_shareholders'
   post '/companies/update_shareholders', to: 'companies#update_selected_companies_shareholders',
     as: 'companies_update_selected_companies_shareholders'
+  post '/companies/:id/update_profile', to: 'companies#update_company_profile',
+    as: 'companies_update_company_profile'
+  post '/companies/update_profiles', to: 'companies#update_selected_companies_profiles',
+    as: 'companies_update_selected_companies_profiles'
 
   get '/legal_reservations', to: 'static_pages#legal_reservations'
 

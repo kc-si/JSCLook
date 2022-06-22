@@ -25,6 +25,21 @@ class CompaniesController < ApplicationController
     redirect_to companies_url, notice: t('companies.update_companies_details.success')
   end
 
+  def update_company_profile
+    CompanyProfileUpdator.call(params.require(:id))
+    redirect_to company_url(params.require(:id)), notice: t('companies.update_company_profile.success')
+  end
+
+  def update_selected_companies_profiles
+    if selector_params_valid?
+      companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))
+      CompaniesProfilesUpdator.call(companies)
+      redirect_to companies_url(params[:stock]), notice: t('companies.update_selected_companies_profiles.success')
+    else
+      render file: Rails.public_path.join('400.html'), layout: false
+    end
+  end
+
   def update_selected_companies_shareholders
     if selector_params_valid?
       companies = CompaniesSelector.call(params.permit(:query, :stock, :condition))

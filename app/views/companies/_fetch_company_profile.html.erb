@@ -1,0 +1,25 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#fetchCompanyProfile">
+  UPDATE&nbsp;company&nbsp;profile
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="fetchCompanyProfile" tabindex="-1" role="dialog"
+ aria-labelledby="fetchCompanyProfile" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fetchTitle">Confirm to update company profile</h5>
+        <button class="btn-close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        By confirm you will download actual company profile
+        and update company database.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Dismiss</button>
+        <%= button_to 'Update', companies_update_company_profile_path(@company.id), method: :post, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>
