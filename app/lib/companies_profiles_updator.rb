@@ -5,7 +5,7 @@ class CompaniesProfilesUpdator < CompanyProfileUpdator
     time_shift = DateTime.now - 1
     companies.each.with_index(1) do |company, index|
       if company.updated_at < time_shift
-        CompanyProfileUpdator.call(company.isin)
+        CompanyProfileUpdator.call(company.id)
         slow_iteration(index)
       end
     end
