@@ -15,14 +15,19 @@ class CompanyShareholdersUpdator < ApplicationService
 
   def upsert_company_shareholders(company_shareholders, company)
     company_shareholders.each do |shareholder_attrs|
-      shareholder = company.shareholders.find_or_create_by!(name: shareholder_attrs.fetch(:name))
+      shareholder = Shareholder.find_or_create_by!(name: shareholder_attrs.fetch(:name))
       shares_count = shareholder_attrs.fetch(:shares_count)
-      update_shares_count(company, shareholder, shares_count)
+      upsert_shares_count(company, shareholder, shares_count)
     end
   end
 
-  def update_shares_count(company, shareholder, shares_count)
+  def upsert_shares_count(company, shareholder, shares_count)
     share = company.shares.find_by(shareholder_id: shareholder.id)
-    share.update!(shares_count: shares_count, updated_at: Time.now.utc)
+
+    if share
+      share.update!(shares_count: shares_count, updated_at: Time.now.utc)
+    else
+      Share.create!(shareholder_id: shareholder.id, company_id: company.id, shares_count: shares_count)
+    end
   end
 end
