@@ -14,7 +14,7 @@ class CompanyProfileUpdator < ApplicationService
   private
 
   def update_company_profile(company_attrs, company)
+    company_attrs.merge!({ profile_updated_at: DateTime.now.utc })
     company.update!(company_attrs)
-    company.touch
   end
 end
