@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_28_161407) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_23_082435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_161407) do
     t.string "pbv"
     t.string "pe"
     t.string "condition"
+    t.datetime "profile_updated_at"
+    t.datetime "shares_updated_at"
     t.index ["isin"], name: "index_companies_on_isin", unique: true
   end
 

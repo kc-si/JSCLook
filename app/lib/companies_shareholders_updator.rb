@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
+MIN_PERIOD_BETWEEN_SHAREHOLDERS_UPDATE = 40.days
+
 class CompaniesShareholdersUpdator < CompanyShareholdersUpdator
   def call(companies)
-    time_shift = DateTime.now.utc - 40
     companies.each.with_index(1) do |company, index|
-      if company.shares.empty? || company.shares[0].updated_at < time_shift
+      if company.shares_updated_at.nil? || company.shares_updated_at < MIN_PERIOD_BETWEEN_SHAREHOLDERS_UPDATE.ago
         CompanyShareholdersUpdator.call(company.id)
         slow_iteration(index)
       end

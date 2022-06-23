@@ -9,6 +9,7 @@ class CompanyShareholdersUpdator < ApplicationService
     company = Company.find(id)
     company_shareholders = @gpw_client.fetch_company_shareholders(company.stock, company.isin)
     upsert_company_shareholders(company_shareholders, company)
+    company.update!(shares_updated_at: DateTime.now.utc)
   end
 
   private
