@@ -122,15 +122,14 @@ GEM
     hashdiff (1.0.1)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.1.0)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsbundling-rails (1.0.3)
+      railties (>= 6.0.0)
     json (2.6.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -297,13 +296,13 @@ DEPENDENCIES
   bootsnap
   brakeman
   bundler-audit
-  cssbundling-rails
+  cssbundling-rails (~> 1.1)
   debug
   devise
   faraday
   guard-rspec
-  importmap-rails
   jbuilder
+  jsbundling-rails
   json
   nokogiri (>= 1.13.4)
   pg (~> 1.1)
