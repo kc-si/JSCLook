@@ -17,8 +17,11 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.6'
 
+# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
+gem 'jsbundling-rails'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails'
+# gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 # gem 'turbo-rails'
@@ -47,7 +50,7 @@ gem 'bootsnap', require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
-gem 'cssbundling-rails'
+gem 'cssbundling-rails', '~> 1.1'
 
 # Use Nokogiri
 gem 'nokogiri', '>= 1.13.4'
