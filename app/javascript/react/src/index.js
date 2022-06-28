@@ -2,5 +2,6 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import Hello from "./components/Hello"
+import Root from "./components/Root"
 import Welcome from "./components/Welcome"
+import Companies from "./components/Companies"
