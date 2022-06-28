@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/react', to: 'application#react', as: 'react'
+  get '/react(*path)', to: 'application#react', as: 'react'
 
   namespace :api do
     namespace :v1 do
