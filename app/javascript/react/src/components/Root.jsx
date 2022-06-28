@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
+
+import CompaniesTable from './CompaniesTable'
 
 class Root extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello, Rails 7!</h1>
-      </div>
+      <CompaniesTable />
     );
   }
 }
