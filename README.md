@@ -4,30 +4,34 @@
 
 ##  Currently the site is under construction, but you can see a beta version on [jsclook.herokuapp.com](https://jsclook.herokuapp.com/)
 
-App is build on Ruby 3.1.1p18
+App is build on Ruby 3.1.2
 
 ## Installation:
 
 1. Download repository
 
-2. Install Ruby, for more information visit [https://www.ruby-lang.org/](https://www.ruby-lang.org/)
+2. Install Ruby, for more information visit [https://www.ruby-lang.org/](https://www.ruby-lang.org/).  
+   You need to have also `nodejs` and `yarn`:  
+   
+     [https://nodejs.org/](https://nodejs.org/)  
+     [https://yarnpkg.com/](https://yarnpkg.com/)
 
 3. Install gems. Go to main directory of this repository and run from command line:
 
     If you do not have installed bundler already, install it by running command:
 
-        `gem install bundler`
+       gem install bundler
 
     then install gems :
 
-        `bundle install`
+       bundle install
 
 4. App needs PostgreSQL database, you can find it at [https://www.postgresql.org/](https://www.postgresql.org/)
 
 5. When you have installed PostgreSQL then create user with password for app, in PostgreSQL:
 
-     `username: jsclook`
-     `password: 'jsclookRails'`
+       username: jsclook
+       password: 'jsclookRails'
 
      user and password are set in `/config/database.yml`
 
@@ -37,11 +41,25 @@ App is build on Ruby 3.1.1p18
 
     go to main directory of this repository and run from command line:
 
-        `bin/rails db:setup`
+        bin/rails db:setup
+      
+7. Instal esbuild and bootstrap:
 
-7. Now start the server by running the following command from command line in the app's main directory:
+   go to main directory of this repository and run from command line:
+   
+        bin/rails javascript:install:esbuild
+        bin/rails css:install:bootstrap
+        
+8. Edit `"scripts"` in `package.json` :
 
-    `bin/rails server`
+       "scripts": {
+          "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.js=jsx",
+          "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+       }
+
+9. Now start the server by running the following command from command line in the app's main directory:
+
+       bin/rails server
 
     app should start server on your local machine,
 
