@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchBar from './SearchBar';
 
 class CompaniesTableHead extends React.Component {
   render() {
@@ -29,28 +30,6 @@ class CompaniesTableRow extends React.Component {
         <td className="text-muted" >{company.shares_amount}</td>
       </tr>
     )
-  }
-}
-
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.props.onValueChange(event.target.value);
-  }
-
-  render() {
-    const value = this.props.value;
-    const placeholder = this.props.placeholder;
-    return (
-      <form>
-        <input type="text" placeholder={placeholder} value={value} onChange={this.handleChange}>
-        </input>
-      </form>
-    );
   }
 }
 
