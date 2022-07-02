@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createRoot } from 'react-dom/client'
 
-import CompaniesTable from './CompaniesTable'
+import FilterableCompaniesTable from './FilterableCompaniesTable'
 
 class Root extends React.Component {
   render() {
     return (
-      <CompaniesTable />
+      <FilterableCompaniesTable />
     );
   }
 }

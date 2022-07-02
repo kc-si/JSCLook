@@ -33,7 +33,7 @@ class CompaniesTableRow extends React.Component {
   }
 }
 
-class CompaniesTable extends React.Component {
+class FilterableCompaniesTable extends React.Component {
   constructor(props) {
     super(props);
     this.handleFilterChange = this.handleFilterChange.bind(this);
@@ -93,4 +93,4 @@ class CompaniesTable extends React.Component {
   }
 }
 
-export default CompaniesTable;
+export default FilterableCompaniesTable;
