@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -22,4 +21,4 @@ class SearchBar extends React.Component {
     );
   }
 }
-export default SearchBar
+export default SearchBar;
