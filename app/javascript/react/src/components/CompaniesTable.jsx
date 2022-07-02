@@ -44,9 +44,10 @@ class SearchBar extends React.Component {
 
   render() {
     const value = this.props.value;
+    const placeholder = this.props.placeholder;
     return (
       <form>
-        <input type="text" placeholder="Filter..." value={value} onChange={this.handleChange}>
+        <input type="text" placeholder={placeholder} value={value} onChange={this.handleChange}>
         </input>
       </form>
     );
@@ -99,7 +100,7 @@ class CompaniesTable extends React.Component {
 
     return (
       <div>
-        <SearchBar value={filter} onValueChange={this.handleFilterChange} />
+        <SearchBar placeholder='Filter...' value={filter} onValueChange={this.handleFilterChange} />
         <table className="table table-striped table-sm ">
           <thead>
             <CompaniesTableHead />
