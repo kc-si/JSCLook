@@ -16,14 +16,18 @@ class CompaniesTableHead extends React.Component {
 }
 
 class CompaniesTableRow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const company = this.props.company;
     const index = this.props.index;
 
     return (
       <tr>
-        <td className="text-dark" >{index + 1}</td>
-        <td><button className="nav-link text-dark p-0">{company.name}</button></td>
+        <td className="text-muted" >{index + 1}</td>
+        <td><button className="btn nav-link p-0" onClick={this.props.onClick}>{company.name}</button></td>
         <td className="text-muted" >{company.isin}</td>
         <td className="text-muted" >{company.stock}</td>
         <td className="text-muted" >{company.shares_amount}</td>
@@ -51,7 +55,12 @@ class FilterableCompaniesTable extends React.Component {
         (company, index) => {
           if (company.name.toLowerCase().includes(filter.toLowerCase()) || company.isin.toLowerCase().includes(filter.toLowerCase()))
             return (
-              <CompaniesTableRow company={company} index={index} key={company.id} />
+              <CompaniesTableRow
+                company={company}
+                index={index}
+                key={company.id}
+                onClick={() => this.props.onClick(company.id)}
+              />
             );
         }
       );
