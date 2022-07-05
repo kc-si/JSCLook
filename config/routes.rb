@@ -3,6 +3,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get '/react(*path)', to: 'application#react', as: 'react'
+
+  namespace :api do
+    namespace :v1 do
+      resources :companies, only: [:index, :show], format: 'json'
+    end
+  end
+
   # Defines the root path route ("/")
   root 'companies#index'
 

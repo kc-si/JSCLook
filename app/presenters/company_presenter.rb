@@ -46,7 +46,7 @@ class CompanyPresenter
   end
 
   def price
-    @company.price or 'n/a'
+    @company.price ? @company.price[/.*[.,]\d{0,3}/] : 'n/a'
   end
 
   def book_value
@@ -62,11 +62,11 @@ class CompanyPresenter
   end
 
   def pbv
-    @company.pbv ? @company.pbv[/.*\.\d{3}/] : 'n/a'
+    @company.pbv ? @company.pbv[/.*[.,]\d{0,3}/] : 'n/a'
   end
 
   def pe
-    @company.pe ? @company.pe[/.*\.\d{3}/] : 'n/a'
+    @company.pe ? @company.pe[/.*[.,]\d{0,3}/] : 'n/a'
   end
 
   def condition
