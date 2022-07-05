@@ -65,7 +65,7 @@ class Company extends React.Component {
           </div>
         </div>
         <div>
-          <button className="btn btn-outline-secondary btn-sm" onClick={this.props.onBackClick}>Back</button>
+          <button className="btn btn-outline-secondary btn-sm m-4" onClick={this.props.onBackClick}>Back</button>
         </div>
       </div>
     );

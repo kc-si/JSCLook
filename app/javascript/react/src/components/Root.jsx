@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Companies from './Companies';
 import GetApiData from './GetApiData';
 
-const default_API_Url = "http://localhost:3000/api/v1/";
+const default_API_Url = "https://jsclook.herokuapp.com/api/v1/";
 
 function Root() {
   const companies = GetApiData(default_API_Url + 'companies');

@@ -74,7 +74,9 @@ class FilterableCompaniesTable extends React.Component {
 
     return (
       <div>
-        <SearchBar placeholder='Filter...' value={filter} onValueChange={this.handleFilterChange} />
+        <div className="m-2">
+          <SearchBar placeholder='Filter...' value={filter} onValueChange={this.handleFilterChange} />
+        </div>
         <table className="table table-striped table-sm ">
           <thead>
             <CompaniesTableHead />
