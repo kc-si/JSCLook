@@ -1,24 +1,18 @@
-import React from 'react';
+import React from "react";
+import { useParams } from "react-router-dom";
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+export default function SearchBar({ placeholder, value, onValueChange }) {
+  let params = useParams();
+
+  const handleChange = (event) => {
+    onValueChange(event.target.value);
   }
 
-  handleChange(event) {
-    this.props.onValueChange(event.target.value);
-  }
+  return (
+    <form>
+      <input type="text" placeholder={placeholder} value={value} onChange={handleChange}>
+      </input>
+    </form>
+  );
 
-  render() {
-    const value = this.props.value;
-    const placeholder = this.props.placeholder;
-    return (
-      <form>
-        <input type="text" placeholder={placeholder} value={value} onChange={this.handleChange}>
-        </input>
-      </form>
-    );
-  }
 }
-export default SearchBar;

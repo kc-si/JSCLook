@@ -2,4 +2,4 @@
 
 import * as bootstrap from "bootstrap"
 
-import Root from "./react/src/components/Root"
+import { Root } from "./react/src/Index"
