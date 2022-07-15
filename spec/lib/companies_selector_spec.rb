@@ -28,7 +28,6 @@ RSpec.describe CompaniesSelector do
           name: 'MOSTALPLC',
           isin: 'PLMSTPL00018',
           stock: 'NC',
-          condition: 'company_active',
         ),
       )
     end
@@ -59,7 +58,6 @@ RSpec.describe CompaniesSelector do
           name: 'MOSTALPLC',
           isin: 'PLMSTPL00018',
           stock: 'NC',
-          condition: 'company_active',
         ),
       )
     end
@@ -90,7 +88,6 @@ RSpec.describe CompaniesSelector do
           name: 'MERCATOR',
           isin: 'PLMRCTR00015',
           stock: 'GPW',
-          condition: 'company_active',
         ),
       )
     end
@@ -121,7 +118,6 @@ RSpec.describe CompaniesSelector do
           name: 'MOSTALPLC',
           isin: 'PLMSTPL00018',
           stock: 'GPW',
-          condition: 'company_active',
         ),
       )
     end

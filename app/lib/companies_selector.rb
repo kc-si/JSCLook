@@ -2,7 +2,7 @@
 
 class CompaniesSelector < ApplicationService
   def call(params)
-    relation = Company.all
+    relation = Company.all.select(:id, :name, :isin, :stock, :shares_amount)
     relation = filter_by_condition(relation, params.fetch(:condition, 'company_active'))
     relation = filter_by_stock(relation, params.fetch(:stock)) if params.key?(:stock)
     relation = filter_by_query(relation, params.fetch(:query)) if params.key?(:query)
