@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :shareholders, only: [:index, :show], format: 'json'
       resources :companies, only: [:index, :show], format: 'json'
+
+      get 'shareholders/:id/companies', to: 'shareholders#show_shareholder_companies', format: 'json'
+      get 'shareholders/:id/shares', to: 'shareholders#show_shareholder_shares', format: 'json'
     end
   end
 
