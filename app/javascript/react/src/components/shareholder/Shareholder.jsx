@@ -1,10 +1,8 @@
 import React from "react";
 
-export const Shareholder = ({ shareholder }) => {
+export const Shareholder = ({ shareholder, companies, shares }) => {
   return (
     <div>
-      <hr className="mt-4"/>
-      <p>{shareholder.name}, {shareholder.id}</p>
     </div>
   );
 }

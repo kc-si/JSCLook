@@ -5,7 +5,7 @@ import { Head } from "./table/Head";
 export const Table = ({ companies, shares, filter }) => {
   return (
     <div>
-      <table className="table table-striped table-sm ">
+      <table className="table table-striped table-hover table-sm">
         <thead>
           <Head />
         </thead>

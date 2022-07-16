@@ -25,3 +25,13 @@ export const fetchShareholder = async (id) => {
   const response = await axios.get(shareholders_API_Url + id);
   return (response.data);
 };
+
+export const fetchShareholderCompanies = async (id) => {
+  const response = await axios.get(shareholders_API_Url + id + "/companies");
+  return (response.data);
+};
+
+export const fetchShareholderShares = async (id) => {
+  const response = await axios.get(shareholders_API_Url + id + "/shares");
+  return (response.data);
+};
