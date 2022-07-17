@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar";
 import CompaniesContainer from "./components/companies/CompaniesContainer";
 import CompanyContainer from "./components/company/CompanyContainer";
 import ShareholdersContainer from "./components/shareholders/ShareholdersContainer";
+import ShareholderContainer from "./components/shareholder/ShareholderContainer";
 
 export const Root = () => {
   return (
@@ -13,7 +14,8 @@ export const Root = () => {
         < Route path="/react" element={<NavBar />} >
           <Route path="companies" element={<CompaniesContainer />} />
           <Route path="companies/:id" element={<CompanyContainer />} ></Route>
-          <Route path="/react/shareholders" element={<ShareholdersContainer />} />
+          <Route path="shareholders" element={<ShareholdersContainer />} />
+          <Route path="shareholders/:id" element={<ShareholderContainer />} ></Route>
         </Route>
       </Routes>
     </BrowserRouter>

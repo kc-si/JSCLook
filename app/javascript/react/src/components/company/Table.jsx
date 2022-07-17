@@ -2,7 +2,7 @@ import React from "react";
 import { Body } from "./table/Body";
 import { Head } from "./table/Head";
 
-export const Table = ({ companies, filter, onCompanyNameClick }) => {
+export const Table = ({ companies, onCompanyNameClick }) => {
   return (
     <div>
       <table className="table table-striped table-sm">
@@ -12,7 +12,6 @@ export const Table = ({ companies, filter, onCompanyNameClick }) => {
         <tbody>
           <Body
             companies={companies}
-            filter={filter}
             onCompanyNameClick={onCompanyNameClick}
           />
         </tbody>

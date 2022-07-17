@@ -7,8 +7,7 @@ export const Row = ({ company, index, onNameClick }) => {
 
   return (
     <tr>
-      <td className="text-muted">{index + 1}</td>
-      <td><button className="btn nav-link p-0" onClick={handleClick}>{company.name}</button></td>
+      <td className="pe-0 me-0"><button className="btn nav-link p-0 m-0" onClick={handleClick}>{company.name}</button></td>
     </tr>
   );
 }

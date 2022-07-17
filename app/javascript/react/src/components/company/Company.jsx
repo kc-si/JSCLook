@@ -8,21 +8,21 @@ export const Company = ({ company }) => {
         <p className="small text-muted">{company.belong_to}</p>
       </div>
       <hr />
-      <div className="col m-2">
+      <div className="col">
         <div className="row">
           <table>
             <tbody>
               <tr>
-                <td className="pb-4"><h6>Company ISIN</h6></td>
-                <td className="pb-4"><h6>{company.isin}</h6></td>
+                <td className="pb-1"><h6>Company ISIN</h6></td>
+                <td className="pb-1"><h6>{company.isin}</h6></td>
               </tr>
               <tr>
                 <td>P/BV</td>
                 <td className="text-danger fw-light">{company.pbv ? company.pbv.match(/.*[.,]\d{0,2}/) : null}</td>
               </tr>
               <tr>
-                <td className="pb-2">P/E</td>
-                <td className="text-danger fw-light pb-2">{company.pe ? company.pe.match(/.*[.,]\d{0,2}/) : null}</td>
+                <td className="pb-1">P/E</td>
+                <td className="text-danger fw-light pb-1">{company.pe ? company.pe.match(/.*[.,]\d{0,2}/) : null}</td>
               </tr>
               <tr>
                 <td className="fw-light">Capitalization</td>
@@ -33,8 +33,8 @@ export const Company = ({ company }) => {
                 <td className="fw-light">{company.book_value ? company.book_value + " million" : null}</td>
               </tr>
               <tr>
-                <td className="fw-light pb-4">Shares amount</td>
-                <td className="fw-light pb-4">{company.shares_amount}</td>
+                <td className="fw-light pb-2">Shares amount</td>
+                <td className="fw-light pb-2">{company.shares_amount}</td>
               </tr>
               <tr className="border-top">
                 <td>Stock</td>

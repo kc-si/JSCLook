@@ -2,7 +2,7 @@ import React from "react";
 import { Body } from "./table/Body";
 import { Head } from "./table/Head";
 
-export const Table = ({ companies }) => {
+export const Table = ({ shareholders }) => {
   return (
     <div>
       <table className="table table-striped table-sm ">
@@ -10,7 +10,7 @@ export const Table = ({ companies }) => {
           <Head />
         </thead>
         <tbody>
-          <Body companies={companies} />
+          <Body shareholders={shareholders} />
         </tbody>
       </table>
     </div>

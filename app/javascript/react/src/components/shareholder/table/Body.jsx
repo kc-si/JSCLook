@@ -8,6 +8,7 @@ export const Body = ({ companies }) => {
         return (
           <Row
             company={company}
+            shares_count={company.shares_amount}
             index={index}
             key={company.id}
           />
